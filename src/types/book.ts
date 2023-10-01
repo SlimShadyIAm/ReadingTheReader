@@ -26,4 +26,3 @@ export type BookOption = {
   resizeOnOrientationChange: boolean;
   spread: 'auto' | 'none';
 };
-

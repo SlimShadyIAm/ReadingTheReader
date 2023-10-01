@@ -3,6 +3,8 @@ import { useReaderRef } from '@providers/readerRef';
 import { useBookInfo } from '@providers/bookInfo';
 import PageNavigationButton from './PageNavigationButton';
 import { useBookSettings } from '@/providers/bookSettings';
+import TitleBar from './TitleBar';
+import './ReaderView.css'
 
 const ReaderView = () => {
   const viewerRef = useReaderRef();
@@ -10,16 +12,20 @@ const ReaderView = () => {
   const { settings } = useBookSettings();
 
   return (
-    <div className="relative flex h-screen w-screen overflow-x-hidden">
-      <PageNavigationButton variant="previous" />
-      <ReactEpubViewer
-        url="Alices Adventures in Wonderland.epub"
-        ref={viewerRef}
-        onBookInfoChange={setBook}
-        viewerOption={settings}
-      />
-      <PageNavigationButton variant="next" />
-    </div>
+    <>
+      <TitleBar />
+      <div className="flex w-full overflow-x-hidden reader">
+        <PageNavigationButton variant="previous" />
+        <ReactEpubViewer
+          url="Alices Adventures in Wonderland.epub"
+          ref={viewerRef}
+          onBookInfoChange={setBook}
+          viewerOption={settings}
+          viewerStyle={{marginHorizontal: 100, fontSize: 24}} 
+        />
+        <PageNavigationButton variant="next" />
+      </div>
+    </>
   );
 };
 
