@@ -1,0 +1,25 @@
+{
+  "extends": "@slimshadyiam",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "unused-imports"
+  ],
+  "rules": {
+    "import/extensions": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "react/no-array-index-key": "off",
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}
