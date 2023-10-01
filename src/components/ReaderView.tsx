@@ -12,7 +12,7 @@ const ReaderView = () => {
   const viewerRef = useReaderRef();
   const { setBook } = useBookInfo();
   const { settings } = useBookSettings();
-  const [margin, setMargin] = useState(100);
+  const [margin, setMargin] = useState(120);
 
   const handleDrag = (_, { deltaX }) => {
     const snapS = 20;
@@ -35,11 +35,11 @@ const ReaderView = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col h-screen'>
       <TitleBar />
-      <div className="flex w-full overflow-x-hidden reader">
+      <div className="flex w-full overflow-x-hidden reader flex-grow">
         <PageNavigationButton variant="previous" />
-        <div className="w-4 h-screen bg-gray-600 absolute cursor-pointer" style={{ left: `${margin * 2 + 55}px` }} />
+        <div className="w-4 bg-gray-600  cursor-pointer" />
         <ReactEpubViewer
           url="Alices Adventures in Wonderland.epub"
           ref={viewerRef}
@@ -47,10 +47,10 @@ const ReaderView = () => {
           viewerOption={settings}
           viewerStyle={{ marginHorizontal: margin, fontSize: 24 }}
         />
-        <div className="w-4 h-screen bg-gray-600 absolute cursor-pointer" style={{ right: `${margin * 2 + 55}px` }} />
+        <div className="w-4 bg-gray-600  cursor-pointer" />
         <PageNavigationButton variant="next" />
       </div>
-    </>
+    </div>
   );
 };
 

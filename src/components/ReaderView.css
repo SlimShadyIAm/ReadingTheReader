@@ -1,6 +1,6 @@
 .reader > div {
-  /* width: 100% !important; */
+  height: 100% !important;
 }
 .reader > div > div {
-  /* width: 100% !important; */
+  height: 100% !important;
 }
