@@ -1,10 +1,9 @@
-import { useContext } from 'react';
 import { ReactEpubViewer } from 'react-epub-viewer';
-import { ReaderRefContext } from '@/App';
+import { useReaderRef } from '@providers/readerRef';
 import PageNavigationButton from './PageNavigationButton';
 
 const ReaderView = () => {
-  const viewerRef = useContext(ReaderRefContext).ref;
+  const viewerRef = useReaderRef();
 
   return (
     <div className="relative flex h-screen w-screen overflow-x-hidden">
