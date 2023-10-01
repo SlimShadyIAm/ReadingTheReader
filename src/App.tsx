@@ -1,12 +1,15 @@
+import BookInfoProvider from '@providers/bookInfo';
+import BookSettingsProvider from '@providers/bookSettings';
+import ReaderRefProvider from '@providers/readerRef';
 import ReaderView from './components/ReaderView';
-import BookInfoProvider from './providers/bookInfo';
-import ReaderRefProvider from './providers/readerRef';
 
 const App = () => {
   return (
     <ReaderRefProvider>
       <BookInfoProvider>
-        <ReaderView />
+        <BookSettingsProvider>
+          <ReaderView />
+        </BookSettingsProvider>
       </BookInfoProvider>
     </ReaderRefProvider>
   );

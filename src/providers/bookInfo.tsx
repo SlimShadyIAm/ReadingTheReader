@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useContext, useMemo, useState } from 'react';
-import Book from '@/types/book';
+import { Book } from '@/types/book';
 
 interface BookInfoContextProps {
   book: Book | null;
