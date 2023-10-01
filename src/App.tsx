@@ -1,10 +1,13 @@
 import ReaderView from './components/ReaderView';
+import BookInfoProvider from './providers/bookInfo';
 import ReaderRefProvider from './providers/readerRef';
 
 const App = () => {
   return (
     <ReaderRefProvider>
-      <ReaderView />
+      <BookInfoProvider>
+        <ReaderView />
+      </BookInfoProvider>
     </ReaderRefProvider>
   );
 };
