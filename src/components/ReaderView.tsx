@@ -1,21 +1,19 @@
-import { useRef } from 'react';
+import { useContext } from 'react';
 import { ReactEpubViewer } from 'react-epub-viewer';
+import { ReaderRefContext } from '@/App';
+import PageNavigationButton from './PageNavigationButton';
 
 const ReaderView = () => {
-  const ref = useRef(null);
+  const viewerRef = useContext(ReaderRefContext).ref;
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        height: '100vh',
-        width: '100vw',
-        overflowX: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <ReactEpubViewer url="Alices Adventures in Wonderland.epub" ref={ref} />
+    <div className="relative flex h-screen w-screen overflow-x-hidden">
+      <PageNavigationButton variant="previous" />
+      <ReactEpubViewer
+        url="Alices Adventures in Wonderland.epub"
+        ref={viewerRef}
+      />
+      <PageNavigationButton variant="next" />
     </div>
   );
 };
