@@ -18,12 +18,12 @@ const PageNavigationButton = ({ variant }: Props) => {
   };
 
   return (
-    <button
+    <div
       onClick={variant === 'next' ? nextPage : previousPage}
-      type="button"
+      className='bg-gray-500 flex-grow flex items-center justify-center cursor-pointer'
     >
-      {variant === 'next' ? 'Next' : 'Previous'}
-    </button>
+      {variant === 'next' ? 'N' : 'P'}
+    </div>
   );
 };
 
