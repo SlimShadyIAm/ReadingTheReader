@@ -14,10 +14,10 @@ const ReaderView = () => {
   const { setBook } = useBookInfo();
   const { settings } = useBookSettings();
   const [margin, setMargin] = useState(50);
-  const MIN = 25;
-  const MAX = 200;
-  const INCREMENT = 25;
-  const SENSITIVITY = 0.8;
+  const MIN = 10;
+  const MAX = 70;
+  const INCREMENT = 30;
+  const SENSITIVITY = 0.2;
 
   const roundToNearestIncrement = (num: number) => {
     const roundedResult =
@@ -50,7 +50,7 @@ const ReaderView = () => {
         marginHorizontal: margin,
         marginVertical: 0,
       });
-    }, 250);
+    }, 0);
 
     return () => window.clearTimeout(timer);
   }, [margin]);
