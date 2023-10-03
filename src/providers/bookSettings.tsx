@@ -23,6 +23,7 @@ export const useBookSettings = () => {
 };
 
 const BookSettingsProvider = ({ children }: Props) => {
+  // TODO: extend this with Style settings
   const [settings, setSettings] = useState<BookOption>({
     spread: 'none',
     flow: 'paginated',
